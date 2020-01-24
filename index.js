@@ -74,7 +74,7 @@ function getName(personObject) {
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
 function makeSmartPerson(_name) {
-  return {"name": _name, "sum": (num1, num2) => {return num1 + num2}, "speak": () => {return `Hello, my name is ${_name}`}};
+  return {"name": _name, "sum": (num1, num2) => { return num1 + num2 }, "speak": () => { return `Hello, my name is ${_name}` }};
 }
 
 
@@ -269,9 +269,9 @@ function getGermanCars(inventory) {
  *   return num * 2
  * }
 */
-const sum = null; // code here!
-const addFive = null; // code here!
-const argTimesTwo = null; // code here!
+const sum = (a, b) => { return a + b };
+const addFive = (num) => { return num + 5 };
+const argTimesTwo = (num) => { return num * 2 };
 
 /**
  * ### Challenge `carMaker`
@@ -286,8 +286,14 @@ const argTimesTwo = null; // code here!
  *         (1) causes the odometer in the object to be increased by the distance,
  *         (2) returns the updated value of the `odometer`.
 */
-function carMaker(/* code here */) {
-  /* code here */
+function carMaker(_odometer) {
+  const drive = (distance) => {
+    car.odometer += distance;
+    return car.odometer;
+  }
+  let car = {"odometer": _odometer, "drive": drive};
+  return car;
+
 }
 
 /// ////// END OF CHALLENGE /////////
